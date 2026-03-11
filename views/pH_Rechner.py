@@ -30,7 +30,7 @@ if __name__ == "__main__":
  
 
 # --- NEW CODE to update history in session state and display it ---
-st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([{'pH': ph_val}])])
+st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([calculate_ph(h_conc)])])
         
 # --- NEW CODE to display the history table ---
 st.dataframe(st.session_state['data_df'])
